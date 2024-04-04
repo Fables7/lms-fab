@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 
 import { db } from "@/lib/db";
 import CourseSidebarItem from "./CourseSidebarItem";
+import CourseProgress from "@/components/CourseProgress";
 
 interface CourseSidebarProps {
   course: Course & {
@@ -36,7 +37,7 @@ const CourseSidebar = async ({ course, progressCount }: CourseSidebarProps) => {
         <h1 className="font-semibold">{course.title}</h1>
         {purchase && (
           <div className="mt-10">
-            {/* <CourseProgress variant="success" value={progressCount} /> */}
+            <CourseProgress variant="success" value={progressCount} />
           </div>
         )}
       </div>
