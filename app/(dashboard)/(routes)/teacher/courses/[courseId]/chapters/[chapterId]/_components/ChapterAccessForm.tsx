@@ -9,7 +9,6 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import * as z from "zod";
 
-import Editor from "@/components/editor";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -17,13 +16,11 @@ import {
   FormControl,
   FormDescription,
   FormField,
-  FormItem,
-  FormMessage,
+  FormItem
 } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
 import { Chapter } from "@prisma/client";
 import { Pencil } from "lucide-react";
-import { Preview } from "@/components/Preview";
 
 interface ChapterAccessFormProps {
   initialData: Chapter;

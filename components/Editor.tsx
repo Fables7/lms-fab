@@ -10,7 +10,7 @@ interface EditorProps {
   value: string;
 }
 
-const Editor = ({ onChange, value }: EditorProps) => {
+export const Editor = ({ onChange, value }: EditorProps) => {
   const ReactQuill = useMemo(
     () => dynamic(() => import("react-quill"), { ssr: false }),
     []
@@ -22,5 +22,3 @@ const Editor = ({ onChange, value }: EditorProps) => {
     </div>
   );
 };
-
-export default Editor;
