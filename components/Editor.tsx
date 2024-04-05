@@ -10,19 +10,17 @@ interface EditorProps {
   value: string;
 }
 
-export const Editor = ({
-    onChange,
-    value,
-  }: EditorProps) => {
-    const ReactQuill = useMemo(() => dynamic(() => import("react-quill"), { ssr: false }), []); // to prevent ssr
-  
-    return (
-      <div className="bg-white">
-        <ReactQuill
-          theme="snow"
-          value={value}
-          onChange={onChange}
-        />
-      </div>
-    );
-  };
+const Editor = ({ onChange, value }: EditorProps) => {
+  const ReactQuill = useMemo(
+    () => dynamic(() => import("react-quill"), { ssr: false }),
+    []
+  ); // to prevent ssr
+
+  return (
+    <div className="bg-white">
+      <ReactQuill theme="snow" value={value} onChange={onChange} />
+    </div>
+  );
+};
+
+export default Editor;
